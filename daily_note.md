@@ -48,4 +48,11 @@
 >>
 >> dataSource()와 transactionManager() Bean으로 등록
 >>
->>  
+>> DataSourceTest.class @Inject 없음!
+>>> - maven javax.inject 등록 (but @Inject 과 @Autowire 차이가 없다 함)
+>> - @Inject 이 문제가 아니었다. RootContext.class가 잘못되었다.
+>> config package 에 ContextDataSource.class 를 생생 후 RootContext에 @Import를 사용하니
+>> DataSource 객체에 주입되었다.
+>>
+>> - DataSourceTest에서 @ContextConfiguration(classes={})에서 불필요한 WdbContext.class를 써서
+>> error가 생겼었다. 제거하면 정상 작동한다.
