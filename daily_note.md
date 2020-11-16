@@ -33,4 +33,19 @@
 >>
 >> Success!
 >
->Install MyBatis
+>Set MyBatis & Another
+>>  mybatis v3.5.6
+>>  mybatis-spring v2.0.6
+>>  spring-jdbc v5.2.6
+>>  spring-test v5.2.6
+>
+>Add RootContext config
+>> create sr/main/resources/database.properties setting
+>>
+>> BasicDataSource 못불러옴!! 
+>>> -  maven org.apache.commons:commons-dbcp2 등록!  해결!!
+>>>
+>>
+>> dataSource()와 transactionManager() Bean으로 등록
+>>
+>>  

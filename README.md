@@ -24,6 +24,7 @@
 >> 
 >> jUnit test
 >>
->> InstallMyBatis
-
+>> Add MyBatis
+>>
+>> Set WebConfig(web.xml), WebContext(servlet-context.xml), RootContext(root-context.xml)
 

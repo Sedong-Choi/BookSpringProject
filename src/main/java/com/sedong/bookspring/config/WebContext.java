@@ -7,8 +7,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-
-/* web.xml version
+/*
+     WebContext는  servlet-context.xml 을 대신하는 클래스이다.
+*/
+/* .xml version
 <!-- @Controller 애노테이션 사용 -->
 <annotation-driven/>
 
@@ -26,7 +28,7 @@ public class WebContext implements WebMvcConfigurer {
         //ViewResolver 설정
         registry.jsp("/WEB-INF/views/",".jsp");
 
-        /* web.xml version
+        /* .xml version
         <!-- 뷰 prefix, suffix 설정 -->
         <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
             <beans:property name="prefix" value="/WEB-INF/views/"/>
@@ -41,7 +43,7 @@ public class WebContext implements WebMvcConfigurer {
         // Static Resources 설정
         registry.addResourceHandler("/**").addResourceLocations("/resources/");
 
-        /* web.xml version
+        /* .xml version
         <!-- 정적 리소스 경로 설정 -->
         <resources mapping="/**" location="/resources/"/>
         */
