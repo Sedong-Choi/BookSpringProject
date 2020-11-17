@@ -1,9 +1,9 @@
 package com.sedong.bookspring;
 
 
-import com.sedong.bookspring.config.RootContext;
-import com.sedong.bookspring.config.WebConfig;
-import com.sedong.bookspring.config.WebContext;
+import com.bookspring.config.RootContext;
+
+import com.bookspring.config.WebConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -12,13 +12,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
-
-import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={RootContext.class,WebConfig.class})
+@ContextConfiguration(classes={RootContext.class, WebConfig.class})
 // WebContext.class 등록을 하면 error가 난다 조심!
 public class DataSourceTest {
 

@@ -1,4 +1,4 @@
-package com.sedong.bookspring.config;
+package com.bookspring.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 */
 @Configuration // 설정 파일 명시하는 annotation
 @EnableWebMvc // WebMvc 패턴을 사용을  명시하는 annotation
-@ComponentScan("com.sedong.bookspring.controller") // () 안에 있는 패키지 스캔을 명시하는 annotation
+@ComponentScan("com.bookspring.controller") // () 안에 있는 패키지 스캔을 명시하는 annotation
 public class WebContext implements WebMvcConfigurer {
 
     @Override

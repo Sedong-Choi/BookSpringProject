@@ -1,6 +1,8 @@
 package com.sedong.bookspring;
 
-import com.sedong.bookspring.config.*;
+
+import com.bookspring.config.RootContext;
+import com.bookspring.config.WebConfig;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;

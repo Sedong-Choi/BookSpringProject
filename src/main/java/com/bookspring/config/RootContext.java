@@ -1,16 +1,6 @@
-package com.sedong.bookspring.config;
+package com.bookspring.config;
 
-import org.apache.commons.dbcp2.BasicDataSource;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
-
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.transaction.PlatformTransactionManager;
-
-
-import javax.sql.DataSource;
 
 /*
     RootContext는 root-context.xml을 대신하는 클래스이다
