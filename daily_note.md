@@ -66,4 +66,12 @@
 >>
 >> 기본적인 MVC 패턴 세팅 끝난듯합니다. 이제부터 controller, service 등을 만들예정입니다.
 >
-> Create Controller
+> Create Controller, set slf4j,log4j maven
+>> result.jsp 에서 EL 적용이 안됨 (**해결못함**) 
+>>
+>> jstl, el maven 설치 후 아직 안됨 
+>> - 해결방법!! <%@ page contentType="text/html;charset=UTF-8" language="java"%>에서
+>> laguage 부분을 제거 하니 잘 작동한다.
+>>
+>> 왜 그럴까? IntelliJ에서 problems에 "redundant default attribute value assignment"
+>> 어딘가에서 중복으로 기본값을 java로 설정해놓은거 같다.(나중에 찾아봐야지)
