@@ -17,7 +17,8 @@ import javax.sql.DataSource;
 */
 @Configuration//현재 class를 config class임을 spring에 알려준다
 @Import({
-        ContextDataSource.class
+        ContextDataSource.class,
+        ContextSqlMapper.class
 })
 //@ComponentScan(basePackages = {"com.sedong.book"})
 public class RootContext { //초기에는 설정 할 필요가 없다. 프로젝트 진행야 따라 빈을 등록하면 된다.

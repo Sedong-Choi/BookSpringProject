@@ -40,7 +40,7 @@
 >>  spring-test v5.2.6
 >
 >Add RootContext config
->> create sr/main/resources/database.properties setting
+>> create src/main/resources/database.properties setting
 >>
 >> BasicDataSource 못불러옴!! 
 >>> -  maven org.apache.commons:commons-dbcp2 등록!  해결!!
@@ -54,5 +54,16 @@
 >> config package 에 ContextDataSource.class 를 생생 후 RootContext에 @Import를 사용하니
 >> DataSource 객체에 주입되었다.
 >>
->> - DataSourceTest에서 @ContextConfiguration(classes={})에서 불필요한 WdbContext.class를 써서
+>> - DataSourceTest에서 @ContextConfiguration(classes={})에서 불필요한 WebContext.class를 써서
 >> error가 생겼었다. 제거하면 정상 작동한다.
+
+---------
+#2020-11-17
+>To connect MyBatis
+>> Create ContextSqlMapper.class >> RootContest(@Import) + ContextSqlMapper 추가
+>>
+>> MyBatisTest 추가(@Configration 에는 WebConfig, RootContext 만 사용 다른 class 사용시 오류발생)
+>>
+>> 기본적인 MVC 패턴 세팅 끝난듯합니다. 이제부터 controller, service 등을 만들예정입니다.
+>
+> Create Controller

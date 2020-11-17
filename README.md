@@ -1,6 +1,7 @@
 # TEST PROJECT START NOVE 12th
 ---------------
-> 코드로 배우는 스프링 웹프로젝트 책을 보며 작성하였습니다.
+> '코드로 배우는 스프링 웹프로젝트' 책을 보며 작성하였습니다.
+>> 설정파일은 xml 대신 java를 이용해서 구현해 보았습니다.(모두 java는 아님)
 ---------------
 ## 프로젝트를 하는 목적
 > 책에 있는 예제를 만들면서 SPRING PROJECT를 다시 복습하고
@@ -27,4 +28,9 @@
 >> Add MyBatis
 >>
 >> Set WebConfig(web.xml), WebContext(servlet-context.xml), RootContext(root-context.xml)
+>> 
+>> ContextDataSource, Rootcontext(@Import 사용)
+>2020-11-17
+>> 
+>> MyBatis 사용을 위한 ContextSqlMapper.class 생성 및 Test
 
