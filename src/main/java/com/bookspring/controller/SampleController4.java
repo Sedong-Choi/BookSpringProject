@@ -17,7 +17,7 @@ public class SampleController4 {
     public String doE(RedirectAttributes rttr){
         logger.info("doE called but redirect to /doF..");
 
-        //addFlashAttribute를 사용하면 redirect시 url 에 안남는다 ..
+        //addFlashAttribute를 사용하면 redirect시 url에 안남는다 ..
         // 하지만 왜 doF 에서 msg 를 못받는지??
         // 잠시 session에 담았다 redirect 후 소멸한다고 한다. 그럼 안나오는게 맞는거
         rttr.addFlashAttribute("msg","This is the Message!! with redirected");
@@ -29,11 +29,11 @@ public class SampleController4 {
         return "redirect:/doF";
     }
 
-    @RequestMapping("doF")
+    @RequestMapping("/doF")
     public void doF(String msg){
         // doE 에서 setting 한 msg가 나와야 하는데 왜....
         // logger에서는 안나오지만 jsp에서 ${msg} 를 받아올 수있다.
-        // doF.jsp 확인
+
          logger.info("doF called ..."+ msg);
 
     }

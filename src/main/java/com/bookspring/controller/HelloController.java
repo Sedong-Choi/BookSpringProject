@@ -6,17 +6,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HelloController {
 
     private static final Logger logger=
             LoggerFactory.getLogger(HelloController.class);
-    @GetMapping("/hi")
+    @RequestMapping("/hi")
     public String hello(){
         logger.info("hello called........");
         System.out.println("in hello");
         return "hello";
+    }
+
+    @RequestMapping("/doA")
+    public void doA(){
+        logger.info("doA called........");
+    }
+
+    @RequestMapping("/doB")
+    public void doB(){
+        logger.info("doB called........");
     }
 
     @RequestMapping("/doC")

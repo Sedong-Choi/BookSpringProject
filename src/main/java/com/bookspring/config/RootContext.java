@@ -10,7 +10,8 @@ import org.springframework.context.annotation.*;
         ContextDataSource.class,
         ContextSqlMapper.class
 })
-//@ComponentScan(basePackages = {"com.sedong.book"})
+//bean 주입을 위한 @ComponentScan
+@ComponentScan(basePackages = {"com.bookspring.persistence"})
 public class RootContext { //초기에는 설정 할 필요가 없다. 프로젝트 진행야 따라 빈을 등록하면 된다.
     //책에서는 STS를 이용함으로 root-context.xml에 namespaces 를 추가 하여 aop, beans ...을 추가했다
     //현재 나는 java로 구현을 하기 때문에 bean, aop, jdbc 등을 직접 등록해야 한다.

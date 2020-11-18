@@ -82,6 +82,7 @@
 >> - servlet.api maven 다시 불러옴 ( 해결X )
 >> - build java version 과 project java version sync ( 해결X )
 >>
+--------------
 #2020-11-18
   
 >>문제를 찾은 것 같다!(2020-11-18)
@@ -104,3 +105,43 @@
 >
 > 
 > RedirectAttributes => SampleController4
+>
+> JSON => @ResponseBody view level 로 직접 데이터를 보낸다.
+>> 브라우저 개발자페이지(F12)를 눌러 NetWork / Response Headers 부분을 보면 Content-Type : application/json
+>> 임을 확인 할 수 있다.
+>
+> was없이 컨트롤러 테스트하기
+>> servlet-api version은 3.1이상 사용할것 (현재 4.0.1)
+>>
+>> test중 pageNotFound - No mapping for GET {url} error발생 .get .post 둘다 안됨
+>
+>> Controller을 annotation확인( 있음 ) @RequestMapping("~") ( 있음 )
+>> 실제 실행 후 확인하면 jsp 페이지 열리지만 test에서는 안된다고 뜸
+>> url-mapping 문제라는데 이상이 없다.(나중에 해결하자 ㅠ)
+>> 
+> **mybatis를 이용해보자!**
+>> xml 사용시
+>> - 장점 : xml만 수정하면 되어서 유지 보수가 좋다
+>> - 단점 : 코드의 양이 많아지고, 복잡성 증가
+>> 
+>> annotation과 interface 사용시
+>> - 장점 : 별도의 DAO 없이도 개발이 가능하기 때문에 생산성 증가
+>> - 단점 : SQL문을 애노테이션으로 작성하므로, 수정시 다시 컴파일 해야함
+>>
+>> 같이 사용 
+>> - 장점 : 간단한 SQL은 annotation, 복잡한 SQL문은 xml으로 유연하게 만들 수 있음
+>> - 단점 : 개발자간 스타일 차이로 유지보수가 어려워질 수 있음.
+>
+> **Table 생성**, **DAO 생성**, **xml mapper 생성**
+> - Create Table 
+>> resources/DB/schema.sql => query 실행 
+>> 
+> - DAO 생성
+>> java/com/bookspring/persistence/MemeberDAO , MemberDAOImpl
+> - xml mapper 생성
+>> resources/mappers/*.xml 
+> 
+> **MemberDAO Test**
+>> - **ERROR** config를 java로 했더니 엄청난 error가 발생한다 ㅠㅠ
+>> - org.springframework.context.support.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberDAOImpl': Unsatisfied dependency expressed through field 'sqlSession'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSession' defined in com.bookspring.config.ContextSqlMapper: Unsatisfied dependency expressed through method 'sqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in com.bookspring.config.ContextSqlMapper: Invocation of init method failed; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 3; columnNumber: 131; 문서 루트 요소 "beans"은(는) DOCTYPE 루트 "null"과(와) 일치해야 합니다.
+>> - 
