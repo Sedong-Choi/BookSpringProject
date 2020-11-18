@@ -153,3 +153,7 @@
 >> 1. ContextSqlMapper.java  에서 factorybean.setconfigLocation과 .setMapperLocation을 할 필요가 없었다.
 >> 1. MemberDAO interface를 만들고 MemberDAOImpl에서 @Autowire sqlSession을 해주고 namespace설정을 한 후 
 >>  sqlSession.select() 처럼 사용하면된다.
+>
+>> - 참조
+>> - http://mybatis.org/spring/ko/mappers.html
+>> - https://sora-muck.tistory.com/41

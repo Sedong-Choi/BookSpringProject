@@ -43,4 +43,6 @@
 >> 기본적인 Controller, jsp test 
 >> 
 >> mybatis + spring 중 오류 발생(DAO, *Mapper.xml 생성후 test중 발생)
+>>
+>> MemberDAOTest - mybatis를 이용한 data insert 오류 해결 
 
