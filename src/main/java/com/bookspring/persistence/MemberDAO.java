@@ -6,5 +6,5 @@ public interface MemberDAO {
 
     public String getTime();
 
-    public void insertMember(MemberVO vo);
+//    public void insertMember(MemberVO vo);
 }

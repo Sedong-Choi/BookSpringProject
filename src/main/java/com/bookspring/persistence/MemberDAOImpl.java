@@ -7,10 +7,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO{
+
     @Autowired
     private SqlSession sqlSession;
 
     private static final String namespace ="com.bookspring.mapper.MemberMapper";
+
+
 
 
     @Override
@@ -18,8 +21,8 @@ public class MemberDAOImpl implements MemberDAO{
         return sqlSession.selectOne(namespace+".getTime");
     }
 
-    @Override
-    public void insertMember(MemberVO vo) {
-        sqlSession.insert(namespace+".insertMember",vo);
-    }
+//    @Override
+//    public void insertMember(MemberVO vo) {
+//        sqlSession.insert(namespace+".insertMember",vo);
+//    }
 }

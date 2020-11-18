@@ -144,4 +144,12 @@
 > **MemberDAO Test**
 >> - **ERROR** config를 java로 했더니 엄청난 error가 발생한다 ㅠㅠ
 >> - org.springframework.context.support.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberDAOImpl': Unsatisfied dependency expressed through field 'sqlSession'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSession' defined in com.bookspring.config.ContextSqlMapper: Unsatisfied dependency expressed through method 'sqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in com.bookspring.config.ContextSqlMapper: Invocation of init method failed; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 3; columnNumber: 131; 문서 루트 요소 "beans"은(는) DOCTYPE 루트 "null"과(와) 일치해야 합니다.
->> - 
+>> - 해결!!
+>
+> **해결방법**
+>> 나는 계속해서 java로 config 파일을 만들어왔다.
+>> 1. mybatis-config.xml과 *Mapper.xml을 만들 필요가 없었다.
+>> 1. mapper package를 만들어 mapper interface를 정의한다.
+>> 1. ContextSqlMapper.java  에서 factorybean.setconfigLocation과 .setMapperLocation을 할 필요가 없었다.
+>> 1. MemberDAO interface를 만들고 MemberDAOImpl에서 @Autowire sqlSession을 해주고 namespace설정을 한 후 
+>>  sqlSession.select() 처럼 사용하면된다.
