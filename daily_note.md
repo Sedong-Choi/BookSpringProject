@@ -75,3 +75,30 @@
 >>
 >> 왜 그럴까? IntelliJ에서 problems에 "redundant default attribute value assignment"
 >> 어딘가에서 중복으로 기본값을 java로 설정해놓은거 같다.(나중에 찾아봐야지)
+>
+> package 변경 후(../com/sedong/bookspring => ../com/bookspring ) tomcat 실행이 안됨...
+>>  build 완료 후 war exploded 할때 error 발생
+>> - org.apache.tomcat.util.modeler.BaseModelMBean.invoke 메소드 [manageApp]을(를) 호출하는 중 예외 발생
+>> - servlet.api maven 다시 불러옴 ( 해결X )
+>> - build java version 과 project java version sync ( 해결X )
+>>
+#2020-11-18
+  
+>>문제를 찾은 것 같다!(2020-11-18)
+>>
+>> **ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", dispatcherServlet);**
+>>
+>> addServlet에서 이미 dispatcher란 key 값을 가지고 있기 때문에 안된듯 하다.
+>>(docs를 보면 값이 있으면 null을 반환한다.)
+>> 
+>> servletContext.addServlet("dispatcher",dispatcherServlet) 이 저장되는 곳을 찾아야 할듯하다.
+>>
+>> dispatcherServlet 으로 바꾸니 이 오류를 넘어갔다.(servletContext가 정의되어 있는 파일을 삭제 후 실행하면 될듯하다.)
+>> 
+>> **filter.setInitParameter("encoding", "UTF-8");**
+>> 이제 이부분이 문제다.
+>
+> **해결!!** 결론부터 말하면 프로젝트 package경로 수정 후 target에 예전 경로가 남아있어서 안됐다.
+> project 경로에서 남아있던 package를 삭제해 주면 위의 key값을 바꾸지 않아도 된다!!
+>> 하지만 controller가 작동 안한다.. (이것도 package 경로 문제였다.)
+>

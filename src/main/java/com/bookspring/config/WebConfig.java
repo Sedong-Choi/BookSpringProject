@@ -20,7 +20,7 @@ public class WebConfig implements WebApplicationInitializer {
         // DispatcherServlet 설정 -s
         // 1. DispatcherServlet WebApplicationContext 객체 생성
         AnnotationConfigWebApplicationContext webContext = new AnnotationConfigWebApplicationContext();
-        webContext.register(com.bookspring.config.WebContext.class);
+        webContext.register(WebContext.class);
 
         // 2. DispatcherServlet 객체 생성 및 추가
         DispatcherServlet dispatcherServlet = new DispatcherServlet(webContext);
