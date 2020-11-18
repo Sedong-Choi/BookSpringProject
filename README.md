@@ -14,7 +14,8 @@
 >> 출처 https://atoz-develop.tistory.com/entry/IntelliJ-Spring-Web-MVC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%84%B8%ED%8C%85-%EC%9E%90%EB%B0%94-%EC%84%A4%EC%A0%95-%EC%82%AC%EC%9A%A9
 
 #Project
->java.version 1.8
+>java version 1.8
+>tomcat version 9.0.39
 
 ### daily detail
 >2020-11-13
@@ -30,7 +31,13 @@
 >> Set WebConfig(web.xml), WebContext(servlet-context.xml), RootContext(root-context.xml)
 >> 
 >> ContextDataSource, Rootcontext(@Import 사용)
+>
 >2020-11-17
 >> 
 >> MyBatis 사용을 위한 ContextSqlMapper.class 생성 및 Test
+>
+>2020-11-18
+>
+>> package 변경 후 오류 수정
+>> 기본적인 Controller, jsp test 
 

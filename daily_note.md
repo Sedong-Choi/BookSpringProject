@@ -102,3 +102,5 @@
 > project 경로에서 남아있던 package를 삭제해 주면 위의 key값을 바꾸지 않아도 된다!!
 >> 하지만 controller가 작동 안한다.. (이것도 package 경로 문제였다.)
 >
+> 
+> RedirectAttributes => SampleController4
