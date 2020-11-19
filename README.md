@@ -46,3 +46,16 @@
 >>
 >> MemberDAOTest - mybatis를 이용한 data insert 오류 해결 
 
+> 2020-11-19
+>>
+>> log4jdbc 및 기본적인 설정 완료! 
+>> MemberDAO, MemberDAOImpl 로 database에 접근하기 까지 완료.
+>> IntelliJ 에서 spring 프로젝트 기본 설정 하는법을 끝냈다.
+>> 
+-----------
+# 후기
+> IntelliJ 에 익숙하지 않고, Spring 프로젝트를 java config 로 하는법도 처음이라
+> 정보를 찾고 오류 수정하고 머리속에서 정리하는게 생각했던 시간보다 오래걸렸다.
+> 바로 복습을 해서 정확하게 내것으로 만들어야겠다. 
+
+
