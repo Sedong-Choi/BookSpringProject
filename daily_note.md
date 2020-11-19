@@ -157,3 +157,14 @@
 >> - 참조
 >> - http://mybatis.org/spring/ko/mappers.html
 >> - https://sora-muck.tistory.com/41
+>
+
+----------------
+#2020-11-19
+> log4jdbc 설정!
+>> jdbc dirver 경로를 변경한다.(database.properties)
+>>> - jdbc.driver=com.mysql.jdbc.Driver => jdbc.driver=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+>>> - jdbc.url=jdbc:mysql://127.0.0.1:3306/book_ex => jdbc.url=jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex
+>> resources/log4jdbc.log4j2.properties, logback.xml 생성
+
+> - 이번에는 바로 성공!

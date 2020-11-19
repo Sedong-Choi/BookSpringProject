@@ -10,6 +10,6 @@ public interface MemberMapper {
 //            "values (#{userid},#{userpw}, #{username}, #{email})")
 //    public void insertMember();
 
-    @Select("select sysdate() from dual")
+    @Select("select now()")
     public String getTime();
 }
